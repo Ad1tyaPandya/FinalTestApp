@@ -18,9 +18,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 def run_model():
     
-    model = load_model(r"C:\Users\adity.DESKTOP-DIU3TF0\api\male_vs_female_ml\saved_models\audio_classification.hdf5")
+    model = load_model(r"api\male_vs_female_ml\saved_models\audio_classification.hdf5")
     le = LabelEncoder()
-    filename = r"C:\Users\adity.DESKTOP-DIU3TF0\api\file2.wav"
+    filename = r"api\file2.wav"
     audio,sample_rate = librosa.load(filename,res_type='kaiser_fast')
     mfccs_features=librosa.feature.mfcc(y=audio,sr=sample_rate,n_mfcc=40)
     mfccs_scaled_features = np.mean(mfccs_features.T,axis=0)
